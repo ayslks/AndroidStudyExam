@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimerActivity">
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:textSize="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:layout_weight="3"
+            android:id="@+id/button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="START"
+            android:onClick="onClickStart"/>
+
+        <Button
+            android:id="@+id/button_ReStart"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="3"
+            android:text="RESTART"
+            android:onClick="onClickReStart"/>
+
+        <Button
+            android:layout_weight="3"
+            android:id="@+id/button_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="STOP"
+            android:onClick="onClickStop"/>
+
+        <Button
+            android:id="@+id/button_callBack"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="callBack" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

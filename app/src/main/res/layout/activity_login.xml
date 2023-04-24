@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<ImageView
+    android:src="@mipmap/food"
+    android:layout_width="300dp"
+    android:layout_marginTop="50dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="300dp"/>
+
+    <LinearLayout
+        android:id="@+id/fatherLL"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="用户名:"
+                android:textSize="22sp"/>
+
+            <EditText
+                android:gravity="center"
+                android:id="@+id/inputUsername"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:height="50dp"
+                android:hint="@string/input_user_name"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:lines="1"
+                android:imeOptions="actionDone"
+                android:layout_height="48dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="密    码:"
+                android:textSize="22sp"/>
+
+            <EditText
+                android:gravity="center"
+                android:id="@+id/inputPassword"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:height="50dp"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:lines="1"
+                android:imeOptions="actionDone"
+                android:hint="@string/input_password"
+                android:inputType="textPassword"
+                android:minHeight="48dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <CheckBox
+                android:checked="true"
+                android:id="@+id/ck_remember_username"
+                android:gravity="center"
+                android:text="记住账号"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <CheckBox
+                android:id="@+id/ck_remember_password"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记住密码" />
+
+            <CheckBox
+                android:gravity="center"
+                android:id="@+id/ck_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动登录"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录"
+                android:layout_marginStart="40dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/signup"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="注册"/>
+
+            <Button
+                android:id="@+id/forgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:text="忘记密码"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
