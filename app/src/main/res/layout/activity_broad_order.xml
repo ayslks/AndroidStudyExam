@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="left|center"
         android:checked="false"
-        android:text="接收之后是否中断广播"
+        android:text="智者接收之后是否中断谣言"
         android:textColor="@color/black"
         android:textSize="17sp" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="发送有序广播"
+        android:text="发送有序广播(谣言)"
         android:textColor="@color/black"
         android:textSize="17sp" />
 

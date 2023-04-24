@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
+// 自动登录过渡页
 public class EmptyActivity extends AppCompatActivity {
 
     private Handler handler;

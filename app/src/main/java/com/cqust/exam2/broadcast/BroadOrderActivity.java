@@ -46,15 +46,24 @@ public class BroadOrderActivity extends AppCompatActivity implements View.OnClic
         // 1、优先级越大的接收器，越早收到有序广播；
         // 2、优先级相同的时候，越早注册的接收器越早收到有序广播
         orderAReceiver = new OrderAReceiver(); // 创建一个有序广播的接收器A
-        // 创建一个意图过滤器A，只处理ORDER_ACTION的广播
-        IntentFilter filterA = new IntentFilter(ORDER_ACTION);
+        IntentFilter filterA = new IntentFilter(ORDER_ACTION);// 创建一个意图过滤器A，只处理ORDER_ACTION的广播
         filterA.setPriority(8); // 设置过滤器A的优先级，数值越大优先级越高
         registerReceiver(orderAReceiver, filterA); // 注册接收器A，注册之后才能正常接收广播
+
         orderBReceiver = new OrderBReceiver(); // 创建一个有序广播的接收器B
-        // 创建一个意图过滤器A，只处理ORDER_ACTION的广播
-        IntentFilter filterB = new IntentFilter(ORDER_ACTION);
+        IntentFilter filterB = new IntentFilter(ORDER_ACTION);// 创建一个意图过滤器B，只处理ORDER_ACTION的广播
         filterB.setPriority(10); // 设置过滤器B的优先级，数值越大优先级越高
         registerReceiver(orderBReceiver, filterB); // 注册接收器B，注册之后才能正常接收广播
+
+        orderCReceiver = new OrderCReceiver();
+        IntentFilter filterC = new IntentFilter(ORDER_ACTION);
+        filterC.setPriority(12);
+        registerReceiver(orderCReceiver, filterC);
+
+        orderDReceiver = new OrderDReceiver();
+        IntentFilter filterD = new IntentFilter(ORDER_ACTION);
+        filterD.setPriority(14);
+        registerReceiver(orderDReceiver, filterD);
     }
 
     @Override
@@ -62,6 +71,8 @@ public class BroadOrderActivity extends AppCompatActivity implements View.OnClic
         super.onStop();
         unregisterReceiver(orderAReceiver); // 注销接收器A，注销之后就不再接收广播
         unregisterReceiver(orderBReceiver); // 注销接收器B，注销之后就不再接收广播
+        unregisterReceiver(orderCReceiver);
+        unregisterReceiver(orderDReceiver);
     }
 
     private OrderAReceiver orderAReceiver; // 声明有序广播接收器A的实例
@@ -71,12 +82,9 @@ public class BroadOrderActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null && intent.getAction().equals(ORDER_ACTION)) {
-                String desc = String.format("%s%s 接收器A收到一个有序广播\n",
+                String desc = String.format("%s%s 接收器A收到一个谣言\n",
                         tv_order.getText().toString(), DateUtil.getNowTime());
                 tv_order.setText(desc);
-                if (ck_abort.isChecked()) {
-                    abortBroadcast(); // 中断广播，此时后面的接收器无法收到该广播
-                }
             }
         }
     }
@@ -87,15 +95,38 @@ public class BroadOrderActivity extends AppCompatActivity implements View.OnClic
         // 一旦接收到有序广播B，马上触发接收器的onReceive方法
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent != null && intent.getAction().equals(ORDER_ACTION)) {
-                String desc = String.format("%s%s 接收器B收到一个有序广播\n",
-                        tv_order.getText().toString(), DateUtil.getNowTime());
-                tv_order.setText(desc);
-                if (ck_abort.isChecked()) {
-                    abortBroadcast(); // 中断广播，此时后面的接收器无法收到该广播
-                }
+            String desc = String.format("%s%s 接收器B（智者）收到一个谣言\n",
+                    tv_order.getText().toString(), DateUtil.getNowTime());
+            tv_order.setText(desc);
+            if (ck_abort.isChecked()) {
+                abortBroadcast();
+                String desc1 = String.format("%s 谣言止于智者\n", tv_order.getText().toString());
+                tv_order.setText(desc1);
             }
         }
     }
 
+    private OrderCReceiver orderCReceiver;
+    private class OrderCReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null && intent.getAction().equals(ORDER_ACTION)) {
+                String desc = String.format("%s%s 接收器C收到一个谣言\n",
+                        tv_order.getText().toString(), DateUtil.getNowTime());
+                tv_order.setText(desc);
+            }
+        }
+    }
+
+    private OrderDReceiver orderDReceiver;
+    private class OrderDReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null && intent.getAction().equals(ORDER_ACTION)) {
+                String desc = String.format("%s%s 接收器D收到一个谣言\n",
+                        tv_order.getText().toString(), DateUtil.getNowTime());
+                tv_order.setText(desc);
+            }
+        }
+    }
 }

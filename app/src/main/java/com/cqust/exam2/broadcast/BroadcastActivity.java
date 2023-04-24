@@ -9,6 +9,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,29 @@ public class BroadcastActivity extends AppCompatActivity {
                 Intent intent = new Intent(BroadcastActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();//销毁此Activity
+            }
+        });
+
+        LinearLayout bk_lv = findViewById(R.id.bk_lv);
+        Button bt_toOrder = new Button(this);
+        bk_lv.addView(bt_toOrder);
+        bt_toOrder.setText("去发送有序广播");
+        bt_toOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BroadcastActivity.this, BroadOrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button bt_toMinute = new Button(this);
+        bk_lv.addView(bt_toMinute);
+        bt_toMinute.setText("去监听系统分钟广播");
+        bt_toMinute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BroadcastActivity.this, SystemMinuteActivity.class);
+                startActivity(intent);
             }
         });
     }

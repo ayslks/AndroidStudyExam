@@ -1,4 +1,4 @@
-package com.cqust.exam2;
+package com.cqust.exam2.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cqust.exam2.R;
 import com.cqust.exam2.util.DateUtil;
 
 public class SystemMinuteActivity extends AppCompatActivity {
     private TextView tv_minute;
-    private String desc = "开始侦听分钟广播，请稍等。注意要保持屏幕亮着，才能正常收到广播";
+    private String desc = "开始监听分钟广播，请稍等，系统分钟发生变化才能接收到。";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +46,10 @@ public class SystemMinuteActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                desc = String.format("%s\n%s 收到一个分钟到达广播%s", desc,
-                        DateUtil.getNowTime(), intent.getAction());
+                desc = String.format("%s\n%s 收到一个分钟到达广播", desc,
+                        DateUtil.getNowTime());
                 tv_minute.setText(desc);
             }
         }
     }
-
 }
