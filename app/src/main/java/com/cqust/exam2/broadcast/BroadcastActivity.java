@@ -1,4 +1,4 @@
-package com.cqust.exam2;
+package com.cqust.exam2.broadcast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.cqust.exam2.MainActivity;
+import com.cqust.exam2.R;
 
 public class BroadcastActivity extends AppCompatActivity {
 

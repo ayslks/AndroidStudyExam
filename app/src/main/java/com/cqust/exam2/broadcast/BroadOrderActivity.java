@@ -1,4 +1,4 @@
-package com.cqust.exam2;
+package com.cqust.exam2.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cqust.exam2.R;
 import com.cqust.exam2.util.DateUtil;
 
 

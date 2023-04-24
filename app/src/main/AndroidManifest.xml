@@ -22,8 +22,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BroadcastActivity"
-            android:exported="true"></activity>
+            android:name=".broadcast.BroadcastActivity"
+            android:exported="true"/>
         <activity
             android:name=".ContactsActivity"
             android:exported="false" />
@@ -38,15 +38,15 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".SystemMinuteActivity"
-            android:exported="true"></activity>
+            android:exported="true"/>
         <activity
-            android:name=".BroadOrderActivity"
+            android:name=".broadcast.BroadOrderActivity"
             android:exported="true">
 
         </activity>
