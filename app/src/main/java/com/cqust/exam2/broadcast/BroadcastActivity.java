@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cqust.exam2.MainActivity;
+import com.cqust.exam2.activity.MainActivity;
 import com.cqust.exam2.R;
 
 public class BroadcastActivity extends AppCompatActivity {
