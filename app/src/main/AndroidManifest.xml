@@ -17,11 +17,7 @@
         <activity
             android:name=".service.TestMusicService"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service
@@ -31,33 +27,48 @@
         <!-- 通知 -->
         <activity
             android:name=".notification.NotificationActivity"
-            android:exported="true" /> <!-- 标准广播 -->
+            android:exported="true" />
+        <!-- 标准广播 -->
         <activity
             android:name=".broadcast.BroadcastActivity"
-            android:exported="true" /> <!-- 通讯录 -->
+            android:exported="true" />
+        <!-- 通讯录 -->
         <activity
             android:name=".activity.ContactsActivity"
-            android:exported="false" /> <!-- 自动登录过渡页 -->
+            android:exported="false" />
+        <!-- 自动登录过渡页 -->
         <activity
             android:name=".activity.EmptyActivity"
-            android:exported="false" /> <!-- 注册页 -->
+            android:exported="false" />
+        <!-- 注册页 -->
         <activity
             android:name=".activity.RegisterActivity"
-            android:exported="false" /> <!-- 计时器页 -->
+            android:exported="false" />
+        <!-- 计时器页 -->
         <activity
             android:name=".activity.TimerActivity"
-            android:exported="false" /> <!-- 登录页 -->
+            android:exported="false" />
+        <!-- 登录页 -->
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="true" /> <!-- 主页面 -->
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 主页面 -->
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" >
 
-        </activity> <!-- 分钟广播 -->
+        </activity>
+        <!-- 分钟广播 -->
         <activity
             android:name=".broadcast.SystemMinuteActivity"
-            android:exported="true" /> <!-- 有序广播 -->
+            android:exported="true" />
+        <!-- 有序广播 -->
         <activity
             android:name=".broadcast.BroadOrderActivity"
             android:exported="true" >

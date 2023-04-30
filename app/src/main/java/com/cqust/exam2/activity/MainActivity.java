@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.cqust.exam2.R;
 import com.cqust.exam2.bean.User;
 import com.cqust.exam2.broadcast.BroadcastActivity;
+import com.cqust.exam2.service.TestMusicService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();//销毁此Activity
+            }
+        });
+
+        Button bt_music = findViewById(R.id.to_music);
+        bt_music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TestMusicService.class);
+                startActivity(intent);
             }
         });
     }
