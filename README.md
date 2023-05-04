@@ -11,6 +11,8 @@ SQLite数据库的创建使用（增删改查）
 
 适配器adapter、弹窗dialog
 
-广播：标准、有序、分钟广播
+广播Broadcast：标准、有序、分钟广播
 
-通知。。。。
+通知Notification：普通通知
+
+服务Service：实现音乐播放器MusicService

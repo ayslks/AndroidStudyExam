@@ -152,6 +152,4 @@ public class TestMusicService extends AppCompatActivity {
         service = new Intent(TestMusicService.this, MusicService.class);
         startService(service);
     }
-
-
 }

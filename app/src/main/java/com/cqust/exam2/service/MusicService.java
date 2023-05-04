@@ -39,6 +39,7 @@ public class MusicService extends Service{
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.i("lks:","----------Service onCreate-----------");
         manager = getAssets();
         // 注册广播接收CKL_ACTION
         testReceiver = new TestReceiver();
@@ -82,6 +83,7 @@ public class MusicService extends Service{
         }
         mediaPlayer.release();
         handler.removeCallbacks(null);
+        Log.i("lks:","--------Service onDestroy--------");
     }
 
     class TestReceiver extends BroadcastReceiver{
@@ -198,4 +200,5 @@ public class MusicService extends Service{
         handler = new Handler();
         handler.post(runnable);
     }
+
 }
