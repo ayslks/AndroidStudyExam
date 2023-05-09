@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -67,6 +68,16 @@ public class TestMusicService extends AppCompatActivity {
                 Intent intent = new Intent(CKL_ACTION);
                 intent.putExtra("seekTo", seekBar.getProgress());
                 sendBroadcast(intent);
+            }
+        });
+
+        Button button = findViewById(R.id.to_testBind);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(TestMusicService.this, TestBindServiceActivity.class);
+                startActivity(intent1);
+                finish();
             }
         });
     }
@@ -132,6 +143,8 @@ public class TestMusicService extends AppCompatActivity {
                     break;
             }
         }
+
+
     }
 
     private void initActivity(){

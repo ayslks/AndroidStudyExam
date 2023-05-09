@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cqust.exam2.R;
+import com.cqust.exam2.ShowImageActivity;
 import com.cqust.exam2.bean.User;
 import com.cqust.exam2.broadcast.BroadcastActivity;
 import com.cqust.exam2.service.TestMusicService;
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TestMusicService.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.to_showImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShowImageActivity.class);
                 startActivity(intent);
             }
         });

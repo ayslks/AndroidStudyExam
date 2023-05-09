@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".service.TestMusicService">
 
+    <Button
+        android:id="@+id/to_testBind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="216dp"
+        android:text="测试BindService"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
