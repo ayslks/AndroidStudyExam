@@ -1,4 +1,4 @@
-package com.cqust.exam2;
+package com.cqust.exam2.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,11 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.cqust.exam2.R;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class ShowImageActivity extends AppCompatActivity {
@@ -103,6 +103,4 @@ public class ShowImageActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

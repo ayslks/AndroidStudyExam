@@ -10,31 +10,17 @@
 
     <ImageView
         android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:id="@+id/show_img"/>
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/picture_iv"/>
 
     <TextView
+        android:id="@+id/context_tv"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:textSize="20sp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="输入要显示的图片网址"/>
+        android:text="显示的食物的信息"/>
 
-    <EditText
-        android:lines="1"
-        android:maxLines="1"
-        android:layout_gravity="center"
-        android:gravity="center_vertical"
-        android:id="@+id/et_http"
-        android:layout_width="300dp"
-        android:layout_height="50dp"/>
-
-    <Button
-        android:id="@+id/bt_showImg"
-        android:layout_gravity="center"
-        android:text="显示图片"
-        android:layout_width="100dp"
-        android:layout_height="50dp"/>
 </LinearLayout>

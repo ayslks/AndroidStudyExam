@@ -179,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
     private void toLogin(){
         String name = ET_userName.getText().toString().trim();
         String password = ET_password.getText().toString().trim();
+
         if(name.equals("2020440493") && password.equals("123456")){
             rememberNP(name, password);
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
