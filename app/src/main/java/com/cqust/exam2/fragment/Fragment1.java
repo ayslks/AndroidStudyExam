@@ -61,8 +61,8 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
+        if(getArguments()==null){
+            setArguments(new Bundle());
         }
     }
 
@@ -71,14 +71,6 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_1, container, false);
         initFragmentView(view);
-        Log.i("lks","---------------"+state+"----------------");
-//        if (state.equals("300")) {
-//            Intent intent = new Intent(this.getContext(), ShowOrderActivity.class);
-//            intent.putExtra("state", 300);
-//            intent.putExtra("context", orderList.get(0).getContext());
-//            intent.putExtra("pid", String.valueOf(orderList.get(0).getPid()));
-//            startActivity(intent);
-//        }
         return view;
     }
 
@@ -116,7 +108,6 @@ public class Fragment1 extends Fragment {
                         state = "200";
                     }
                 } else if (state.equals("200")) {
-                    Log.i("lks","---------------"+state+"----------------");
                     String click_size = adapter_tv.getText().toString();
                     SQLiteDatabase db = sqLiteOpenHelper.getReadableDatabase();
                     if (!click_size.equals("") && !click_name.equals("")) {
@@ -125,7 +116,6 @@ public class Fragment1 extends Fragment {
                         order_lv.setAdapter(orderAdapter1);
                         if (db.isOpen()) db.close();
                         state = "300";
-                        Log.i("lks","---------------"+orderList+"----------------");
                         Intent intent = new Intent(view.getContext(), ShowOrderActivity.class);
                         intent.putExtra("state", 300);
                         intent.putExtra("context", orderList.get(0).getContext());
@@ -135,6 +125,14 @@ public class Fragment1 extends Fragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        fist_start = true;
+        state = "100";
+        initFragmentView(getView());
     }
 
 }

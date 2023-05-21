@@ -67,7 +67,6 @@ public class OrderAdapter1 extends BaseAdapter {
         }else if (state.equals("300")){
             viewHold.order_name.setText(order.getContext());
         }
-
         return v;
     }
 
