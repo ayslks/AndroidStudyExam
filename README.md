@@ -16,3 +16,5 @@ SQLite数据库的创建使用（增删改查）
 通知Notification：普通通知
 
 服务Service：实现音乐播放器MusicService
+
+fragment简单体验
